@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/Header.css';
+import '../styles/Header.css';
 
-function Header() {
+export const Header = () => {
     return(
         <header >
             <h2>Ravn Star Wars Registry</h2>
@@ -9,4 +9,3 @@ function Header() {
     )
 }
 
-export default Header;
