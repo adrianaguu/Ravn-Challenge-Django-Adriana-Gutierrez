@@ -41,7 +41,7 @@ class Person(models.Model):
 
     species = models.ManyToManyField(Species,help_text="Set of species that this person belongs to.")
 
-    vehicles = models.ManyToManyField(Vehicle,help_text="Set of vehicles that this person has piloted.",null=True,blank=True)
+    vehicles = models.ManyToManyField(Vehicle,help_text="Set of vehicles that this person has piloted.",blank=True)
 
     def __str__(self):
         return self.name
