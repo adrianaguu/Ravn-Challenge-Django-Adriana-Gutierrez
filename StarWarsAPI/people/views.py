@@ -11,6 +11,5 @@ class PersonDetail(RetrieveAPIView):
 class PeopleList(ListAPIView):
     pagination_class = PageNumberPagination
     pagination_class.page_size = 5
-    page_size = 5
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
