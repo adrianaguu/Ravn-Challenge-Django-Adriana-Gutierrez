@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import '../styles/Sidebar.css';
 import PeopleService from "../endpoints/people";
+import {LoadingIndicator} from "./LoadingIndicator"
 
 const peopleService = new PeopleService();
 
@@ -21,9 +22,9 @@ export const Sidebar = () =>  {
         }
     }
 
-    function renderElement(){
+    function renderLoading(){
         if(people.length === 0)
-           return <p>empty</p>
+           return <LoadingIndicator/>
         return null
      }
 
@@ -33,9 +34,10 @@ export const Sidebar = () =>  {
 
     return(
         <div className="Sidebar">
-            {
-                 renderElement()
-            }
+            {renderLoading()}
+            {people.map(person => (
+                <p key={person.id}>{person.name}</p>       
+            ))}
         </div>
     )
 }

@@ -1,9 +1,9 @@
 
 .Sidebar {
 
-    position: absolute;
+    position: relative;
     width: 350px;
-    height: 848px;
+    height: 100vh;
     left: 0px;
     top: 52px;
     background: #FFFFFF;
