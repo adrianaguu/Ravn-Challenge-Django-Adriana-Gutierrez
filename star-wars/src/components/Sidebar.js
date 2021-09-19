@@ -6,7 +6,7 @@ import { LoadingIndicator } from "./LoadingIndicator"
 import useHandlePagination from '../hooks/handlePagination'
 
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
 
     const [page, setPage] = useState(1)
 
@@ -32,11 +32,11 @@ export const Sidebar = () => {
             {people.map((person, index) => {
                 const _person = <Person name={person.name} species={person.species} homeworld={person.homeworld} />
                 if (people.length === index + 1) {
-                    return <div ref={lastPersonRef} key={person.id}>
+                    return <div ref={lastPersonRef} key={person.id} onClick={() => props.handleClick(person.id)}>
                         {_person}
                     </div>
                 } else {
-                    return <div key={person.id}>
+                    return <div key={person.id} onClick={() => props.handleClick(person.id)}>
                         {_person}
                     </div>
                 }

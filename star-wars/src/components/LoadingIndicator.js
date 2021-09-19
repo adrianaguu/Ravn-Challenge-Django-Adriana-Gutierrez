@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/LoadingIndicator.css';
 import loading from '../static/loading.gif';
 

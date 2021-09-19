@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import Api from '../api/api'
+
 
 export default function useHandlePagination(pageNumber) {
 
@@ -8,17 +9,14 @@ export default function useHandlePagination(pageNumber) {
     const [people, setPeople] = useState([])
     const [hasMore, setHasMore] = useState(false)
 
+    const axois_config = new Api()
+
     useEffect(() => {
 
         setLoading(true)
         setError(false)
 
-        axios({
-            method: 'GET',
-            url: 'http://localhost:8000/people/?page=' + pageNumber,
-            params: { },
-
-        }).then(res => {
+        axois_config.getInstance().get('people/?page=' + pageNumber).then(res => {
         
             setPeople(prevPeople => {
                 return [...prevPeople, ...res.data.results]

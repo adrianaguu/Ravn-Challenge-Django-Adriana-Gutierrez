@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/Person.css';
 import indicator from '../static/indicator.svg';
 

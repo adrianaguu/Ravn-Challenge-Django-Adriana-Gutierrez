@@ -1,0 +1,39 @@
+
+.PersonData {
+    position: relative;
+    width: 890px;
+    margin: auto;
+    margin-top: 52px;
+
+}
+
+.PersonData hr{
+    width: 100%;
+}
+
+.SectionHeader {
+    height: 60px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+
+}
+
+.SectionRow {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.Name {
+    color:#828282;
+}
+
+.Value {
+    color: #333333
+}
