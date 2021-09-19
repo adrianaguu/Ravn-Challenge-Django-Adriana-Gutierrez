@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: 'SF Pro Display', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'SF Pro Display';
   font-style: normal;
   letter-spacing: 0.0125em;
   -webkit-font-smoothing: antialiased;

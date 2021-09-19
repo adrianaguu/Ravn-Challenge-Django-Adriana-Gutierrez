@@ -19,15 +19,19 @@ export default function useHandlePagination(pageNumber) {
             params: { },
 
         }).then(res => {
-            console.log(res.data.results)
+        
             setPeople(prevPeople => {
                 return [...prevPeople, ...res.data.results]
               })
+              
             setLoading(false)
             setHasMore(res.data.next != null )
             
         }).catch(e => {
+
+            setLoading(false)
             setError(true)
+
         })
     }, [pageNumber])
 
