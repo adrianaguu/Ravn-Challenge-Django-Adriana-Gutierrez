@@ -4,7 +4,7 @@ import Api from './api';
 class People extends Api {
 
   async getPeople(query) {
-    const response = await this.getInstance().get(`people/${query}`);
+    const response = await this.getInstance().get(`people/?page=${query}`);
     return response.data;
   }
 

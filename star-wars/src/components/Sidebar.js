@@ -1,43 +1,54 @@
-import {React, useState, useEffect} from 'react';
+import { useRef, useState, useCallback } from 'react';
 import '../styles/Sidebar.css';
-import PeopleService from "../endpoints/people";
-import {LoadingIndicator} from "./LoadingIndicator"
 
-const peopleService = new PeopleService();
+import { LoadingIndicator } from "./LoadingIndicator"
+import useHandlePagination from '../hooks/handlePagination'
 
-export const Sidebar = () =>  {
+
+
+
+const SidebarContent = () => {
+
+    const [page, setPage] = useState(1)
     
-    const [people, setPeople] = useState([])
-    const [query, setQuery] = useState('')
+    const { loading, error, people, hasMore } = useHandlePagination(page)
 
-    async function getPeople() {
-        try {
-       
-          const response = await peopleService.getPeople(query)
-          console.log(response)
-          setPeople(people.concat(response.results))
-          
-        } catch (e) {
-          // console.log(e);
-        }
-    }
+    const observer = useRef()
+    const lastPersonRef = useCallback(node => {
+        if (loading) return
+        if (observer.current) observer.current.disconnect()
+        observer.current = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting && hasMore) {
+            setPage(prevPageNumber => prevPageNumber + 1)
+          }
+        })
+        if (node) observer.current.observe(node)
+      }, [loading, hasMore])
 
-    function renderLoading(){
-        if(people.length === 0)
-           return <LoadingIndicator/>
-        return null
-     }
 
-    useEffect(() => {
-        getPeople()
-    }, []);
 
-    return(
+
+    return (
+        <div >
+            {console.log(loading, error)}
+            {people.map((person, index) => {
+                if (people.length === index + 1) {
+                    return <div ref={lastPersonRef} key={person.id}>{person.name}</div>
+                } else {
+                    return <div key={person.id}>{person.name}</div>
+                }
+            })}
+            <div>{loading && <LoadingIndicator />}</div>
+            <div>{error && 'Error..'}</div>
+
+        </div>
+    )
+}
+
+export const Sidebar = () => {
+    return (
         <div className="Sidebar">
-            {renderLoading()}
-            {people.map(person => (
-                <p key={person.id}>{person.name}</p>       
-            ))}
+            <SidebarContent />
         </div>
     )
 }
