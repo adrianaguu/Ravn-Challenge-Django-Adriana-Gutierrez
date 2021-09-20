@@ -27,7 +27,7 @@ const SectionHeader = (props) => {
 export const PersonData = (props) => {
 
     return (
-        <div className="PersonData">
+        <div className="PersonDataContainer">
 
             <SectionHeader title="General Information" />
             <SectionPersonDataRow name="Eye Color" value={props.person.eye_color} />

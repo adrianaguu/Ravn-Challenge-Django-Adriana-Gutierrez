@@ -6,8 +6,11 @@ h2 {
   padding: 16px;
 }
 
-.Container {
-  display: flex;
-  width: 100%;
-  position: relative;
+
+.PersonDataContainer {
+  position: fixed;
+  width: 60%;
+  top: 52px;
+  left: 32%;
+
 }

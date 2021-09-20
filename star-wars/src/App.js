@@ -18,23 +18,21 @@ function App() {
     if (person) {
       return <PersonData person={person} />
     }
-    else if(loading){
-      return <LoadingIndicator/>
-    }
-    else if(error){
-      return <NoticeError/>
-    }
+    else{
+      return <div className="PersonDataContainer">
+        {loading && <LoadingIndicator/>}
+        {error && <NoticeError/>}
+      </div>
+    } 
   }
 
   return (
     <div className="App">
       <Header />
-      {/* <div className="Container"> */}
 
         <Sidebar handleClick={setPersonId} />
         {renderPersonData()}
 
-      {/* </div> */}
     </div>
   );
 }
