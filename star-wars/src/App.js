@@ -12,6 +12,7 @@ function App() {
 
   const [personId, setPersonId] = useState(null)
 
+
   const {loading, error, person} = useGetPerson(personId)
 
   const renderPersonData = () => {

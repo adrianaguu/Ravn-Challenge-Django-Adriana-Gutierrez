@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Api from '../api/api'
+
 
 
 export default function useGetPerson(personId) {
@@ -10,28 +11,36 @@ export default function useGetPerson(personId) {
 
     const axois_config = new Api()
 
+    const mountRef = useRef(false)
+
     useEffect(() => {
 
-        setPerson(null)
-        if (person) {
+        console.log(mountRef.current)
+
+        if (mountRef.current) {
+
+            setPerson(null)
             setLoading(true)
-        }
-        setError(false)
+            setError(false)
 
-        axois_config.getInstance().get('person/' + personId).then(res => {
+            axois_config.getInstance().get('person/' + personId).then(res => {
 
-            setPerson(prevPerson => res.data)
-            setLoading(false)
+                setPerson(prevPerson => res.data)
+                setLoading(false)
 
-        }).catch(e => {
+            }).catch(e => {
 
-            setLoading(false)
-            if (person) {
+                setLoading(false)
                 setError(true)
-            }
+
+            })
+
+        }
+        else{
+            mountRef.current = true 
+        }
 
 
-        })
     }, [personId])
 
     return { loading, error, person }
