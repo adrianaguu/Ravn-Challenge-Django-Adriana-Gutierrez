@@ -62,4 +62,4 @@ Navigate to `http://localhost:3000` in your browser.
 
 The project consists of a single-page application that retrieves data from de people from the Star Wars universe. The user can select the person that they want to know more detailed information.
 
-## Project Description
+## Assumptions 
