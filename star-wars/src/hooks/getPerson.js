@@ -11,7 +11,7 @@ export default function useGetPerson(personId) {
     const axois_config = new Api()
 
     useEffect(() => {
-
+        setPerson(null)
         setLoading(true)
         setError(false)
 

@@ -1,14 +1,10 @@
 
 .PersonData {
-    position: relative;
-    width: 890px;
-    margin: auto;
-    margin-top: 52px;
+    position: fixed;
+    width: 60%;
+    top: 52px;
+    left: 32%;
 
-}
-
-.PersonData hr{
-    width: 100%;
 }
 
 .SectionHeader {

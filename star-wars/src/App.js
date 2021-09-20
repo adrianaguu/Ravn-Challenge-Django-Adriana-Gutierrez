@@ -2,7 +2,7 @@ import './App.css';
 import { Header } from "./components/Header"
 import { Sidebar } from "./components/Sidebar"
 import { PersonData } from "./components/PersonData"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useGetPerson from './hooks/getPerson'
 import { LoadingIndicator } from './components/LoadingIndicator';
 import { NoticeError } from './components/NoticeError';
@@ -26,17 +26,15 @@ function App() {
     }
   }
 
-  
-
   return (
     <div className="App">
       <Header />
-      <div className="Container">
+      {/* <div className="Container"> */}
 
         <Sidebar handleClick={setPersonId} />
         {renderPersonData()}
 
-      </div>
+      {/* </div> */}
     </div>
   );
 }

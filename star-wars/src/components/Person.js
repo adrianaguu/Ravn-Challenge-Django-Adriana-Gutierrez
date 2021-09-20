@@ -8,12 +8,14 @@ export const Person = (props) => {
                 <div className="Cell">
                     <h2>{props.name}</h2>
                     <p>{props.species} from {props.homeworld}</p>
+                    
                 </div>
                 <div className="Icon">
                     <img src={indicator} alt="loading spinner" />
                 </div>
             </div>
-            <hr />
+            <div className="Separator"><hr /></div>
+            
         </div>
     )
 }
