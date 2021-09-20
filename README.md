@@ -1,5 +1,6 @@
 # Ravn-Challenge-Django
 Repository for the Ravn Django Code Challenge
+
 Author: Adriana Fabiola Gutiérrez Montoya
 
 ## Technologies used
@@ -60,13 +61,13 @@ Navigate to `http://localhost:3000` in your browser.
 
 ## Project Description
 
-The project consists of a single-page application that retrieves data from de people from the Star Wars universe. The user can select the person that they want to know more detailed information. The API consists of two endpoints GET People and GET Person, for the endpoint of people 5 people at a time are retrieved . “Infinite scrolling” is implemented on the client application.
+The project consists of a single-page application that retrieves data from the people from the Star Wars universe. The user can select the person that they want to know more detailed information. The API consists of two endpoints GET People and GET Person, for the endpoint of people 5 people at a time are retrieved . “Infinite scrolling” is implemented on the client application.
 
 In the following git we can see the application functionality.
 
 ![Loading](./images/working_app.gif?raw=true "Loading")
 
-Screenshots are available in the images folder. [a relative link](./images)
+Screenshots are available in the [images](./images) folder. 
 
 ## Assumptions and additional information
 
