@@ -60,6 +60,15 @@ Navigate to `http://localhost:3000` in your browser.
 
 ## Project Description
 
-The project consists of a single-page application that retrieves data from de people from the Star Wars universe. The user can select the person that they want to know more detailed information.
+The project consists of a single-page application that retrieves data from de people from the Star Wars universe. The user can select the person that they want to know more detailed information. The API consists of two endpoints GET People and GET Person, for the endpoint of people 5 people at a time are retrieved . “Infinite scrolling” is implemented on the client application.
 
-## Assumptions 
+In the following git we can see the application functionality.
+
+![Loading](./images/working_app.gif?raw=true "Loading")
+
+Screenshots are available in the images folder. [a relative link](./images)
+
+## Assumptions and additional information
+
+- It was assumed that the field `name` of all of the resources (`People`, `Vehicles`, `Planets`, `Species`) is unique.
+- For the design, relative values in some parts were used in order for the application to adapt to different screen sizes. 
